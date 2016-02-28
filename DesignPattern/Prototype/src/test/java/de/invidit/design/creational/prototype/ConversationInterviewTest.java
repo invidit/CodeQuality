@@ -11,14 +11,32 @@ import java.util.ArrayList;
 public class ConversationInterviewTest {
 
     @Test
-    public void testCloneCreatesCopy() {
+    public void testCloneCreatesCopyAndTitelIsEqual() {
         Conversation sut = createConversationInterview();
 
         ConversationInterview actual = (ConversationInterview) sut.clone();
 
         ConversationInterview sutInterview = (ConversationInterview)sut;
         Assertions.assertThat(actual.title).isEqualTo(sutInterview.title);
+    }
+
+    @Test
+    public void testCloneCreatesCopyAndContainsSubitems() {
+        Conversation sut = createConversationInterview();
+
+        ConversationInterview actual = (ConversationInterview) sut.clone();
+
+        ConversationInterview sutInterview = (ConversationInterview)sut;
         Assertions.assertThat(actual.conversationItems).containsAll(sutInterview.conversationItems);
+    }
+
+    @Test
+    public void testCloneCreatesCopyAndIsNotTheSameObject() {
+        Conversation sut = createConversationInterview();
+
+        ConversationInterview actual = (ConversationInterview) sut.clone();
+
+        ConversationInterview sutInterview = (ConversationInterview)sut;
         Assertions.assertThat(actual).isNotSameAs(sut);
     }
 
