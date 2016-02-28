@@ -12,14 +12,14 @@ import de.invidit.design.creational.abstractfactory.component.*;
  * @author Torsten Mingers
  */
 public class HouseCreator {
-    HouseType houseType = HouseType.CountryHouse;
+    private final HouseType  houseType = HouseType.CountryHouse;
 
-    Wall wallNorth;
-    Wall wallSouth;
-    Wall wallEast;
-    Wall wallWest;
-    Door door;
-    Roof roof;
+    public Wall wallNorth;
+    public Wall wallSouth;
+    public Wall wallEast;
+    public Wall wallWest;
+    public Door door;
+    public Roof roof;
 
     public void createHouse() {
 
@@ -30,7 +30,7 @@ public class HouseCreator {
                 wallEast = new WoodenWall();
                 wallWest = new WoodenWall();
 
-                door = null;
+                door = new NoDoor();
                 roof = new WoodenRoof();
                 break;
 

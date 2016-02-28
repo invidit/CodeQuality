@@ -13,17 +13,17 @@ import de.invidit.design.creational.abstractfactory.component.*;
  */
 public class TreeHouseFactory extends HouseFactory {
     @Override
-    Door createDoor() {
+    public Door createDoor() {
         return new NoDoor();
     }
 
     @Override
-    Wall createWall() {
+    public Wall createWall() {
         return new WoodenWall();
     }
 
     @Override
-    Roof createRoof() {
+    public Roof createRoof() {
         return new WoodenRoof();
     }
 }

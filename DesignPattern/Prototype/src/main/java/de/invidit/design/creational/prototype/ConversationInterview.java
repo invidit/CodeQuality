@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 public class ConversationInterview extends ConversationPrototype {
 
     @Override
-    public Conversation clone() {
+    public ConversationInterview clone() {
         ConversationInterview conversation = new ConversationInterview();
         conversation.title = this.title;
         conversation.conversationItems = this.conversationItems

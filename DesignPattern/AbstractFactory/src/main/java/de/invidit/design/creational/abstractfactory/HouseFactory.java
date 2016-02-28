@@ -14,9 +14,9 @@ import de.invidit.design.creational.abstractfactory.component.Wall;
  * @since 19.02.2016.
  */
 public abstract class HouseFactory {
-    abstract Door createDoor();
+    public abstract Door createDoor();
 
-    abstract Wall createWall();
+    public abstract Wall createWall();
 
-    abstract Roof createRoof();
+    public abstract Roof createRoof();
 }

@@ -10,7 +10,7 @@ public abstract class ConversationPrototype implements Conversation {
     public String title;
     public List<ConversationItem> conversationItems;
 
-    public abstract Conversation clone();
+    public abstract ConversationPrototype clone();
 
     @Override
     public boolean equals(Object o) {
