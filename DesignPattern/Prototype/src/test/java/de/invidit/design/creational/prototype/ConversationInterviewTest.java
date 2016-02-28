@@ -36,7 +36,6 @@ public class ConversationInterviewTest {
 
         ConversationInterview actual = (ConversationInterview) sut.clone();
 
-        ConversationInterview sutInterview = (ConversationInterview)sut;
         Assertions.assertThat(actual).isNotSameAs(sut);
     }
 
