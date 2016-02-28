@@ -1,0 +1,4 @@
+include ':DesignPattern/AbstractFactory',
+        ':DesignPattern/Builder',
+        ':DesignPattern/Prototype',
+        ':DesignPattern/Singleton'
