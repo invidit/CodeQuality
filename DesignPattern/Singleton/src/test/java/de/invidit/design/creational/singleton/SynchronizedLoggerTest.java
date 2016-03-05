@@ -11,11 +11,11 @@ import org.junit.Test;
  * @author Michael Weber
  * @since 24.02.2016
  */
-public class LoggerTest {
+public class SynchronizedLoggerTest {
 
     @Test
     public void testGetLoggerGivesOnlyOneObject() throws Exception {
-        Logger logger = Logger.getLogger();
-        Assertions.assertThat(Logger.getLogger()).isEqualTo(logger);
+        SynchronizedLogger logger = SynchronizedLogger.getLogger();
+        Assertions.assertThat(SynchronizedLogger.getLogger()).isEqualTo(logger);
     }
 }

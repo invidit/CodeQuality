@@ -5,19 +5,19 @@
 package de.invidit.design.creational.singleton;
 
 /**
- * @author Michael Weber
- * @since 24.02.2016
+ * @author Torsten Mingers
+ * @since 05.03.2016
  */
-public class Logger {
+public class SimpleLogger {
 
-    private static Logger instance;
+    private static SimpleLogger instance;
 
-    private Logger() {
+    private SimpleLogger() {
     }
 
-    public synchronized static Logger getLogger() {
+    public static SimpleLogger getLogger() {
         if (instance == null) {
-            instance = new Logger();
+            instance = new SimpleLogger();
         }
         return instance;
     }
