@@ -19,7 +19,12 @@ public class Player {
 		this.symbol = playerData.getSymbol();
 		this.strategy = playerData.getStrategy();
 	}
-	
+
+	Player(String name, String symbol) {
+		this.name = name;
+		this.symbol = symbol;
+	}
+
 	public String getName() {
 		return name;
 	}
