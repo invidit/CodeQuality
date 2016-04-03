@@ -28,6 +28,8 @@ public class NoNameSimpleDishwasher implements Dishwasher {
 
     @Override
     public List<Dishes> clearOut() {
-        return this.loadedDishes;
+        ArrayList<Dishes> dishes = new ArrayList<>(loadedDishes);
+        this.loadedDishes.clear();
+        return dishes;
     }
 }
