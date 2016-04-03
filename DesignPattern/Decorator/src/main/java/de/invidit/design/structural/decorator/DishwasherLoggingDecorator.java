@@ -19,13 +19,13 @@ public class DishwasherLoggingDecorator implements Dishwasher {
     @Override
     public void load(List<Dishes> dishes) {
         this.decoratedDishwasher.load(dishes);
-        System.out.println("Loaded dishes");
+        System.out.println("Dishes loaded");
     }
 
     @Override
     public void wash() {
         this.decoratedDishwasher.wash();
-        System.out.println("Washed dishes");
+        System.out.println("Dishes washed");
     }
 
     @Override
