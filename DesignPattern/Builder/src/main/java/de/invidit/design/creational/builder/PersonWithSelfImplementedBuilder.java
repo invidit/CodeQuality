@@ -8,7 +8,7 @@ public class PersonWithSelfImplementedBuilder {
     private String name;
     private String surname;
 
-    public PersonWithSelfImplementedBuilder(Builder builder) {
+    PersonWithSelfImplementedBuilder(Builder builder) {
         this.name = builder.name;
         this.surname = builder.surname;
     }
