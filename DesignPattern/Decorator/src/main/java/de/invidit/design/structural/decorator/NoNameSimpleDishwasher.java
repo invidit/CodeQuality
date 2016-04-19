@@ -18,7 +18,7 @@ public class NoNameSimpleDishwasher implements Dishwasher {
 
     @Override
     public void load(List<Dishes> dishes) {
-        this.loadedDishes = dishes;
+        this.loadedDishes.addAll(dishes);
     }
 
     @Override
