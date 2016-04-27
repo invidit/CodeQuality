@@ -7,11 +7,11 @@ import de.invidit.ttt.entity.GameState;
 public class HumanStrategy implements MoveStrategy {
 
 	public int getNextPosition(GameState state) {
-		String input = "";
+		String input;
 		Scanner in = new Scanner(System.in);
 		
 		do {
-			System.out.println("Bitte Zahl zwischen 1 und " + state.amountOfValues() + " für leeres Feld eingeben:");
+			System.out.println("Bitte Zahl zwischen 1 und " + state.amountOfValues() + " fï¿½r leeres Feld eingeben:");
 			input = in.next();
 		} while (!inputValid(state, input));
 			
