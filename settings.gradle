@@ -3,4 +3,5 @@ include ':DesignPattern/AbstractFactory',
         ':DesignPattern/Prototype',
         ':DesignPattern/Singleton',
         ':DesignPattern/Decorator',
-        ':DesignPattern/Adapter'
+        ':DesignPattern/Adapter',
+        ':DesignPattern/Composite'
