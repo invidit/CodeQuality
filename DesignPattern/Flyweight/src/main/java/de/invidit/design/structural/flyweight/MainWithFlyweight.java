@@ -19,6 +19,8 @@ public class MainWithFlyweight {
 
         List<PositionedFlyweightImage> positionedFlyweightImages = new ArrayList<>();
         PositionedFlyweightImageFactory positionedFlyweightImageFactory = new PositionedFlyweightImageFactory();
+
+        System.out.println("Loading 100 images.");
         for (int i = 0; i < 100; i++) {
             PositionedFlyweightImage positionedFlyweightImage = positionedFlyweightImageFactory.createPositionedFlyweightImage("images/Fliege.jpg");
             ImagePosition imagePosition = ImagePosition.builder()

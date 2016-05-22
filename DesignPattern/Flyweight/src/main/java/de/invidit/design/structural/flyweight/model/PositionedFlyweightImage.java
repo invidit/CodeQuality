@@ -16,6 +16,6 @@ public class PositionedFlyweightImage implements FlyweightImage {
 
     @Override
     public void print(ImagePosition imagePosition) {
-
+        // print image on specified position
     }
 }

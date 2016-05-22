@@ -13,7 +13,6 @@ import java.util.Map;
  * @author Michael Weber
  * @since 21.05.2016
  */
-@Slf4j
 public class PositionedFlyweightImageFactory {
     private Map<String, PositionedFlyweightImage> stringImageMap = new HashMap<>();
 
@@ -25,7 +24,7 @@ public class PositionedFlyweightImageFactory {
             try {
                 bufferedImage = ImageIO.read(this.getClass().getClassLoader().getResourceAsStream(pathToImage));
             } catch (IOException e) {
-                log.warn("Image not found.", e);
+                System.out.println("Image not found");
             }
             flyweightImage = PositionedFlyweightImage
                     .builder()

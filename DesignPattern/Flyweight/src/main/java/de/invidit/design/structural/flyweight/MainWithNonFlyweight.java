@@ -1,6 +1,7 @@
 package de.invidit.design.structural.flyweight;
 
 import de.invidit.design.structural.flyweight.factory.PositionedImageFactory;
+import de.invidit.design.structural.flyweight.model.ImagePosition;
 import de.invidit.design.structural.flyweight.model.PositionedImage;
 import de.invidit.design.structural.flyweight.report.MemoryUsageReporter;
 
@@ -18,8 +19,14 @@ public class MainWithNonFlyweight {
 
         List<PositionedImage> positionedImages = new ArrayList<>();
         PositionedImageFactory positionedImageFactory = new PositionedImageFactory();
+
+        System.out.println("Loading 100 images.");
         for (int i = 0; i < 100; i++) {
-            PositionedImage positionedImage = positionedImageFactory.createPositionedImage("images/Fliege.jpg", i, i);
+            ImagePosition imagePosition = ImagePosition.builder()
+                    .positionX(i)
+                    .positionY(i)
+                    .build();
+            PositionedImage positionedImage = positionedImageFactory.createPositionedImage("images/Fliege.jpg", imagePosition);
             positionedImage.print();
             positionedImages.add(positionedImage);
         }

@@ -13,8 +13,7 @@ import java.awt.*;
 @Builder
 public class PositionedImage {
     private Image image;
-    private int positionX;
-    private int positionY;
+    private ImagePosition position;
 
     public void print() {
         // print image on specified position
