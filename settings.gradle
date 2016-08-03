@@ -5,4 +5,5 @@ include ':DesignPattern/AbstractFactory',
         ':DesignPattern/Decorator',
         ':DesignPattern/Adapter',
         ':DesignPattern/Composite',
-        ':DesignPattern/Flyweight'
+        ':DesignPattern/Flyweight',
+        ':DesignPattern/Bridge'
