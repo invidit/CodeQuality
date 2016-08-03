@@ -1,36 +1,31 @@
 package de.invidit.design.structural.bridge.internal.v2;
 
-import de.invidit.design.structural.bridge.external.sparkasse.v3.SparkasseAccountService;
+import de.invidit.design.structural.bridge.external.sparkasse.v2.AccountingJsonConverter;
+import de.invidit.design.structural.bridge.external.sparkasse.v2.SparkasseAccountService;
 import de.invidit.design.structural.bridge.internal.AccountEnquiry;
 import de.invidit.design.structural.bridge.model.Accounting;
 
 import java.util.Collection;
-import java.util.HashSet;
+import java.util.List;
 
 /**
  * @author Torsten Mingers
  * @since 02.08.2016
  */
-public class AccountEnquirySparkasse implements AccountEnquiry {
+public class AccountEnquirySparkasse extends AccountEnquiry {
 
 	private CategoryDetermininationService categoryDetermininationService;
 
 	public AccountEnquirySparkasse(CategoryDetermininationService categoryDetermininationService) {
-		this.categoryDetermininationService = categoryDetermininationService;
+        super(new SparkasseAccountService(new AccountingJsonConverter()));
+        this.categoryDetermininationService = categoryDetermininationService;
 	}
 
-	@Override
-	public Collection<Accounting> retrieveAccountingData(String account) {
-		String accountingsJson = new SparkasseAccountService().retrieveDataForAccountAsJson(account);
+    public Collection<Accounting> retrieveAccountingData(String accountNo) {
+        List<Accounting> accountings = bankService.retrieveDataForAccount(accountNo);
 
-		return convertAccounting(accountingsJson);
-	}
+        accountings.forEach(accounting -> accounting.setKategorie(categoryDetermininationService.determineCategoryByAccountingText(accounting.getText())));
 
-	private Collection<Accounting> convertAccounting(String accountingsJson) {
-		// Json conversion to AccountData collection goes here
-
-		// new category handling goes here
-
-		return new HashSet<>();
-	}
+        return accountings;
+    }
 }

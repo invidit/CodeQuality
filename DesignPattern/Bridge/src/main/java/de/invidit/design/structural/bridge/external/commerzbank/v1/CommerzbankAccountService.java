@@ -9,7 +9,7 @@ import java.util.List;
  * @author Torsten Mingers
  * @since 02.08.2016
  */
-public class CommerzbankAccountService extends BankService {
+public class CommerzbankAccountService implements BankService {
 
 	private AccountingConverter accountDataConverter;
 
@@ -18,10 +18,17 @@ public class CommerzbankAccountService extends BankService {
 	}
 
 	private String[][] retrieveDataForAccountFromExternal(String account) {
-         return new String[10][5];
-     }
+        String[][] accountData = new String[1][5];
 
-	@Override
+        accountData[0][0] = "Max Mustermann";
+        accountData[0][1] = "Commerzbank V1";
+        accountData[0][2] = "Soll";
+        accountData[0][3] = "447.25";
+        accountData[0][4] = "Miete";
+
+        return accountData;
+    }
+
 	public List<Accounting> retrieveDataForAccount(String account) {
 		return accountDataConverter.convertToAccounting(retrieveDataForAccountFromExternal(account));
 	}

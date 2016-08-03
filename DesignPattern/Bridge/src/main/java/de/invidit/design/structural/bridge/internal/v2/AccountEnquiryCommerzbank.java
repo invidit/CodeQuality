@@ -1,10 +1,10 @@
 package de.invidit.design.structural.bridge.internal.v2;
 
+import de.invidit.design.structural.bridge.external.commerzbank.v2.AccountingConverter;
 import de.invidit.design.structural.bridge.external.commerzbank.v2.CommerzbankAccountService;
-import de.invidit.design.structural.bridge.external.commerzbank.v2.model.AccountData;
 import de.invidit.design.structural.bridge.internal.AccountEnquiry;
+import de.invidit.design.structural.bridge.model.Accounting;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -12,37 +12,21 @@ import java.util.List;
  * @author Torsten Mingers
  * @since 02.08.2016
  */
-public class AccountEnquiryCommerzbank implements AccountEnquiry {
+public class AccountEnquiryCommerzbank extends AccountEnquiry {
 
 
 	private CategoryDetermininationService categoryService;
 
 	public AccountEnquiryCommerzbank(CategoryDetermininationService categoryService) {
-		this.categoryService = categoryService;
+        super(new CommerzbankAccountService(new AccountingConverter()));
+        this.categoryService = categoryService;
 	}
 
-	@Override
-	public Collection<de.invidit.design.structural.bridge.model.Accounting> retrieveAccountingData(String accountNo) {
-		List<AccountData> accountings = new CommerzbankAccountService().retrieveDataForAccount(accountNo);
+	public Collection<Accounting> retrieveAccountingData(String accountNo) {
+        List<Accounting> accountings = bankService.retrieveDataForAccount(accountNo);
 
-		return convertAccounting(accountings);
-	}
+        accountings.forEach(accounting -> accounting.setKategorie(categoryService.determineCategoryByAccountingText(accounting.getText())));
 
-	private Collection<de.invidit.design.structural.bridge.model.Accounting> convertAccounting(List<AccountData> accountings) {
-		ArrayList<de.invidit.design.structural.bridge.model.Accounting> convertedAccountings = new ArrayList<>();
-
-		for (AccountData accountingSequence : accountings) {
-			de.invidit.design.structural.bridge.model.Accounting accounting = de.invidit.design.structural.bridge.model.Accounting.builder()
-					.Absender(accountingSequence.Absender)
-					.Empfaenger(accountingSequence.Empfaenger)
-					.SollHabenKennzeichen(accountingSequence.SollHabenKennzeichen)
-					.Betrag(accountingSequence.Betrag)
-					.Text(accountingSequence.Text)
-					.Kategorie(categoryService.determineCategoryByAccountingText(accountingSequence.Text))
-					.build();
-
-			convertedAccountings.add(accounting);
-		}
-		return convertedAccountings;
-	}
+        return accountings;
+    }
 }
