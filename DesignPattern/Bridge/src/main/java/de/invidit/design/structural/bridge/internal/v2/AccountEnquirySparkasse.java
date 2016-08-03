@@ -1,7 +1,7 @@
 package de.invidit.design.structural.bridge.internal.v2;
 
 import de.invidit.design.structural.bridge.external.sparkasse.v3.SparkasseAccountService;
-import de.invidit.design.structural.bridge.model.AccountEnquiry;
+import de.invidit.design.structural.bridge.internal.AccountEnquiry;
 import de.invidit.design.structural.bridge.model.Accounting;
 
 import java.util.Collection;

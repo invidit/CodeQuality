@@ -1,4 +1,6 @@
-package de.invidit.design.structural.bridge.model;
+package de.invidit.design.structural.bridge.internal;
+
+import de.invidit.design.structural.bridge.model.Accounting;
 
 import java.util.Collection;
 

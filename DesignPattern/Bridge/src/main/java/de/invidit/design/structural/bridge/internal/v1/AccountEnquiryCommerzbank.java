@@ -2,7 +2,7 @@ package de.invidit.design.structural.bridge.internal.v1;
 
 import de.invidit.design.structural.bridge.external.commerzbank.v1.AccountingConverter;
 import de.invidit.design.structural.bridge.external.commerzbank.v1.CommerzbankAccountService;
-import de.invidit.design.structural.bridge.model.AccountEnquiry;
+import de.invidit.design.structural.bridge.internal.AccountEnquiry;
 import de.invidit.design.structural.bridge.model.Accounting;
 
 import java.util.ArrayList;

@@ -3,7 +3,7 @@ package de.invidit.design.structural.bridge;
 import de.invidit.design.structural.bridge.internal.v2.AccountEnquiryCommerzbank;
 import de.invidit.design.structural.bridge.internal.v2.AccountEnquirySparkasse;
 import de.invidit.design.structural.bridge.internal.v2.CategoryDetermininationService;
-import de.invidit.design.structural.bridge.model.AccountEnquiry;
+import de.invidit.design.structural.bridge.internal.AccountEnquiry;
 import de.invidit.design.structural.bridge.model.Accounting;
 
 import java.util.Collection;
