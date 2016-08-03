@@ -13,10 +13,10 @@ import java.util.HashSet;
  */
 public class AccountEnquirySparkasse implements AccountEnquiry {
 
-	private CategoryDermininationService categoryDermininationService;
+	private CategoryDetermininationService categoryDetermininationService;
 
-	public AccountEnquirySparkasse(CategoryDermininationService categoryDermininationService) {
-		this.categoryDermininationService = categoryDermininationService;
+	public AccountEnquirySparkasse(CategoryDetermininationService categoryDetermininationService) {
+		this.categoryDetermininationService = categoryDetermininationService;
 	}
 
 	@Override

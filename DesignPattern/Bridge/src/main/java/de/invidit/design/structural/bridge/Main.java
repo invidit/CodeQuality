@@ -2,7 +2,7 @@ package de.invidit.design.structural.bridge;
 
 import de.invidit.design.structural.bridge.internal.v2.AccountEnquiryCommerzbank;
 import de.invidit.design.structural.bridge.internal.v2.AccountEnquirySparkasse;
-import de.invidit.design.structural.bridge.internal.v2.CategoryDermininationService;
+import de.invidit.design.structural.bridge.internal.v2.CategoryDetermininationService;
 import de.invidit.design.structural.bridge.model.AccountEnquiry;
 import de.invidit.design.structural.bridge.model.Accounting;
 
@@ -13,7 +13,7 @@ import java.util.Collection;
  * @since 02.08.2016
  */
 public class Main {
-	private static CategoryDermininationService categoryService = new CategoryDermininationService();
+	private static CategoryDetermininationService categoryService = new CategoryDetermininationService();
 
 	public static void main(String...args) {
 
@@ -46,6 +46,5 @@ public class Main {
 		enquiry = new AccountEnquirySparkasse(categoryService);
 		Collection<Accounting> accountingsSparkasse = enquiry.retrieveAccountingData("4711");
 	}
-
 
 }

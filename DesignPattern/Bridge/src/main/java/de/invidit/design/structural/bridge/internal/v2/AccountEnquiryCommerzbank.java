@@ -15,9 +15,9 @@ import java.util.List;
 public class AccountEnquiryCommerzbank implements AccountEnquiry {
 
 
-	private CategoryDermininationService categoryService;
+	private CategoryDetermininationService categoryService;
 
-	public AccountEnquiryCommerzbank(CategoryDermininationService categoryService) {
+	public AccountEnquiryCommerzbank(CategoryDetermininationService categoryService) {
 		this.categoryService = categoryService;
 	}
 
